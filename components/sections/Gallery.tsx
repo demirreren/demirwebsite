@@ -57,38 +57,75 @@ export function Gallery() {
                         sizes="(max-width: 768px) 33vw, 300px"
                       />
 
-                      {/* Caption overlay - always visible at bottom */}
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 via-background/60 to-transparent pt-8 pb-2 px-3">
-                        <p className="text-xs text-foreground font-medium tracking-wide">
-                          {item.caption}
-                        </p>
+                      {/* Sleek caption overlay */}
+                      <div className="absolute inset-x-0 bottom-0">
+                        <div className="bg-gradient-to-t from-black/70 via-black/40 to-transparent pt-12 pb-3 px-3">
+                          <p className="text-[11px] text-white/90 font-light tracking-[0.15em] uppercase">
+                            {item.caption}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* See more / See less button */}
-                {hasMore && (
-                  <div className="mt-6 flex justify-center">
-                    <button
-                      onClick={() => toggleSection(section.id)}
-                      className="group/btn flex items-center gap-2 px-5 py-2.5 rounded-full
-                               bg-background-secondary/50 border border-border
-                               hover:border-accent/30 hover:bg-background-secondary
-                               transition-all duration-300"
-                    >
-                      <span className="text-sm text-foreground-secondary group-hover/btn:text-foreground transition-colors">
-                        {isExpanded ? 'See less' : `See more (${section.items.length - initialCount})`}
+                {/* Seamless scroll indicator */}
+                {hasMore && !isExpanded && (
+                  <div 
+                    onClick={() => toggleSection(section.id)}
+                    className="mt-4 cursor-pointer group/more"
+                  >
+                    {/* Fade line with text */}
+                    <div className="flex items-center gap-4">
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                      <span className="text-[10px] text-foreground-muted/60 uppercase tracking-[0.2em] 
+                                     group-hover/more:text-foreground-muted transition-colors duration-300">
+                        scroll
                       </span>
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                    </div>
+                    
+                    {/* Animated chevron */}
+                    <div className="flex justify-center mt-2">
                       <svg 
-                        className={`w-4 h-4 text-foreground-muted group-hover/btn:text-accent transition-all duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                        className="w-4 h-4 text-foreground-muted/40 group-hover/more:text-accent/60 
+                                 animate-bounce transition-colors duration-300"
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                       </svg>
-                    </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* Collapse indicator when expanded */}
+                {hasMore && isExpanded && (
+                  <div 
+                    onClick={() => toggleSection(section.id)}
+                    className="mt-6 cursor-pointer group/less"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                      <span className="text-[10px] text-foreground-muted/60 uppercase tracking-[0.2em]
+                                     group-hover/less:text-foreground-muted transition-colors duration-300">
+                        collapse
+                      </span>
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                    </div>
+                    
+                    <div className="flex justify-center mt-2">
+                      <svg 
+                        className="w-4 h-4 text-foreground-muted/40 group-hover/less:text-accent/60 
+                                 rotate-180 transition-colors duration-300"
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
                   </div>
                 )}
               </div>

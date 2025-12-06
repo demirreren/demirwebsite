@@ -39,9 +39,9 @@ export const galleryData: GallerySection[] = [
       { id: 'lugano', caption: 'Lugano, Switzerland', image: '/images/gallery/travel/13. switzerland.JPG' },
       { id: 'cancun', caption: 'Cancun, Mexico', image: '/images/gallery/travel/14. cancun.jpg' },
       { id: 'istanbul', caption: 'Istanbul, Turkiye', image: '/images/gallery/travel/15. istanbul.jpg' },
-      { id: 'porto', caption: 'Porto, Portugal', image: '/images/gallery/travel/16. porto.JPG' },
-      { id: 'nassau', caption: 'Nassau, Bahamas', image: '/images/gallery/travel/17. bahamas.JPG' },
-      { id: 'miami', caption: 'Miami', image: '/images/gallery/travel/18. miami.jpg' },
+      { id: 'porto', caption: 'Porto, Portugal', image: '/images/gallery/travel/16. porto.JPG?t=1733520000' },
+      { id: 'nassau', caption: 'Nassau, Bahamas', image: '/images/gallery/travel/17. bahamas.jpg?t=1733520000' },
+      { id: 'miami', caption: 'Miami, United States', image: '/images/gallery/travel/18. miami.jpg' },
     ],
   },
   {
