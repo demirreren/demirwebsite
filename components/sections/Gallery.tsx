@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { galleryData } from '@/data/interests';
 
 export function Gallery() {
@@ -25,10 +26,14 @@ export function Gallery() {
                              bg-background-secondary border border-border cursor-pointer
                              hover:border-accent/30 transition-all duration-300"
                   >
-                    {/* Placeholder */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-6 h-6 rounded-full border border-border-light opacity-30" />
-                    </div>
+                    {/* Image */}
+                    <Image
+                      src={item.image}
+                      alt={item.caption}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 33vw, 300px"
+                    />
 
                     {/* Hover overlay with caption */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-transparent

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { experienceData } from '@/data/experience';
 
 export function Experience() {
@@ -36,11 +37,18 @@ export function Experience() {
                 </div>
               </div>
 
-              {/* Image placeholder */}
+              {/* Image */}
               <div className="hidden md:flex items-center justify-center">
-                <div className="w-full aspect-square rounded-lg bg-background-tertiary border border-border 
-                              flex items-center justify-center group-hover:border-accent/20 transition-colors">
-                  <div className="w-8 h-8 rounded-full border border-border-light opacity-30" />
+                <div className="relative w-full aspect-square rounded-lg overflow-hidden 
+                              bg-background-tertiary border border-border 
+                              group-hover:border-accent/20 transition-colors">
+                  <Image
+                    src={entry.image}
+                    alt={entry.company}
+                    fill
+                    className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    sizes="180px"
+                  />
                 </div>
               </div>
             </article>
