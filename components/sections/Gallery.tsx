@@ -5,9 +5,11 @@ import { galleryData } from '@/data/interests';
 
 export function Gallery() {
   return (
-    <section id="gallery" className="section border-t border-border">
-      <div className="container-main">
-        <span className="section-label">Gallery</span>
+    <section className="min-h-screen py-12 overflow-y-auto">
+      <div className="max-w-4xl mx-auto px-6">
+        <span className="text-[11px] uppercase tracking-[0.2em] text-accent mb-8 block">
+          Gallery
+        </span>
 
         <div className="space-y-16">
           {galleryData.map((section) => (

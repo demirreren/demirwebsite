@@ -4,9 +4,11 @@ import { communityData } from '@/data/community';
 
 export function Community() {
   return (
-    <section id="community" className="section border-t border-border">
-      <div className="container-main">
-        <span className="section-label">Community</span>
+    <section className="min-h-screen py-12 overflow-y-auto">
+      <div className="max-w-4xl mx-auto px-6">
+        <span className="text-[11px] uppercase tracking-[0.2em] text-accent mb-8 block">
+          Community
+        </span>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {communityData.map((entry) => (

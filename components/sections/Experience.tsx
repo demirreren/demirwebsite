@@ -22,9 +22,11 @@ function ExternalLinkIcon({ className }: { className?: string }) {
 
 export function Experience() {
   return (
-    <section id="work" className="section border-t border-border">
-      <div className="container-main">
-        <span className="section-label">Work</span>
+    <section className="min-h-screen py-12 overflow-y-auto">
+      <div className="max-w-4xl mx-auto px-6">
+        <span className="text-[11px] uppercase tracking-[0.2em] text-accent mb-8 block">
+          Work Experience
+        </span>
 
         <div className="space-y-6">
           {experienceData.map((entry) => (
@@ -52,7 +54,7 @@ export function Experience() {
                   <span className="text-accent text-sm">{entry.role}</span>
                 </div>
                 
-                {/* Sleeker description with refined styling */}
+                {/* Sleeker description */}
                 <p className="text-[13px] text-foreground-tertiary leading-[1.6] tracking-[0.01em] max-w-md">
                   {entry.description}
                 </p>
@@ -78,7 +80,7 @@ export function Experience() {
                 </div>
               </div>
 
-              {/* Image with animated border - not part of the link */}
+              {/* Image with animated border */}
               <div className="hidden md:block relative z-20">
                 <div className="relative group/image">
                   {/* Animated gradient border */}
