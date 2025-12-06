@@ -58,6 +58,8 @@ const config: Config = {
       animation: {
         'fade-up': 'fadeUp 0.8s ease-out forwards',
         'draw-line': 'drawLine 1s ease-out forwards',
+        'spin-slow': 'spinGradient 3s linear infinite',
+        'border-glow': 'borderGlow 2s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: {
@@ -67,6 +69,15 @@ const config: Config = {
         drawLine: {
           '0%': { width: '0' },
           '100%': { width: '100%' },
+        },
+        spinGradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        borderGlow: {
+          '0%, 100%': { opacity: '0.5' },
+          '50%': { opacity: '1' },
         },
       },
     },
