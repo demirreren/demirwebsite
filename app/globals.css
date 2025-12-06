@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Fraunces - distinctive display serif with character */
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&display=swap');
+  /* General Sans alternative - using Inter as fallback */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground-secondary;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-foreground;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-24 md:py-32;
+  }
+
+  .container-main {
+    @apply max-w-4xl mx-auto px-6;
+  }
+
+  .section-label {
+    @apply text-caption uppercase tracking-widest text-accent mb-8 font-medium;
+  }
+
+  .prose {
+    @apply text-body-lg text-foreground-secondary leading-relaxed;
+  }
+
+  .prose p + p {
+    @apply mt-6;
+  }
+
+  .card {
+    @apply p-6 rounded-2xl bg-background-secondary border border-border
+           transition-all duration-300 hover:border-border-light;
+  }
+
+  /* Orange accent line */
+  .accent-line {
+    @apply h-0.5 bg-gradient-to-r from-accent via-accent-warm to-transparent;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-light to-accent-warm;
+  }
+
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+}
