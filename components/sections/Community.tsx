@@ -6,9 +6,13 @@ export function Community() {
   return (
     <section className="min-h-screen py-12 overflow-y-auto">
       <div className="max-w-4xl mx-auto px-6">
-        <span className="text-[11px] uppercase tracking-[0.2em] text-accent mb-8 block">
-          Community
-        </span>
+        {/* Header */}
+        <div className="flex items-center gap-4 mb-10">
+          <h2 className="font-display text-2xl md:text-3xl text-foreground italic">
+            Community
+          </h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-accent/40 to-transparent" />
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {communityData.map((entry) => (

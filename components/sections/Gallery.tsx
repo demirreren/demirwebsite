@@ -7,9 +7,13 @@ export function Gallery() {
   return (
     <section className="min-h-screen py-12 overflow-y-auto">
       <div className="max-w-4xl mx-auto px-6">
-        <span className="text-[11px] uppercase tracking-[0.2em] text-accent mb-8 block">
-          Gallery
-        </span>
+        {/* Header */}
+        <div className="flex items-center gap-4 mb-10">
+          <h2 className="font-display text-2xl md:text-3xl text-foreground italic">
+            Gallery
+          </h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-accent/40 to-transparent" />
+        </div>
 
         <div className="space-y-16">
           {galleryData.map((section) => (

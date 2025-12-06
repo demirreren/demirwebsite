@@ -24,9 +24,13 @@ export function Experience() {
   return (
     <section className="min-h-screen py-12 overflow-y-auto">
       <div className="max-w-4xl mx-auto px-6">
-        <span className="text-[11px] uppercase tracking-[0.2em] text-accent mb-8 block">
-          Work Experience
-        </span>
+        {/* Header */}
+        <div className="flex items-center gap-4 mb-10">
+          <h2 className="font-display text-2xl md:text-3xl text-foreground italic">
+            Work Experience
+          </h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-accent/40 to-transparent" />
+        </div>
 
         <div className="space-y-6">
           {experienceData.map((entry) => (
@@ -36,37 +40,36 @@ export function Experience() {
                        bg-background-secondary/50 border border-border
                        hover:border-accent/20 hover:bg-background-secondary transition-all"
             >
-              {/* Clickable link overlay (excludes image area) */}
-              <a
-                href={entry.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 md:right-[220px] z-10 rounded-xl"
-                aria-label={`Visit ${entry.company} website`}
-              />
-
               {/* Content */}
               <div className="space-y-4 relative">
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
                   <h3 className="font-display text-lg text-foreground italic">
                     {entry.company}
                   </h3>
-                  <span className="text-accent text-sm">{entry.role}</span>
+                  <span className="text-foreground-muted text-sm">→</span>
+                  <span className="font-display text-sm text-accent italic tracking-wide">
+                    {entry.role}
+                  </span>
                 </div>
                 
-                {/* Sleeker description */}
-                <p className="text-[13px] text-foreground-tertiary leading-[1.6] tracking-[0.01em] max-w-md">
+                {/* Description with links */}
+                <div className="text-[13px] text-foreground-tertiary leading-[1.7] tracking-[0.01em]">
                   {entry.description}
-                </p>
+                </div>
                 
                 <div className="flex items-center gap-4 pt-1">
                   {/* External link icon - bottom left */}
-                  <div className="flex items-center gap-1.5 text-foreground-muted group-hover:text-accent transition-colors">
+                  <a
+                    href={entry.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-foreground-muted group-hover:text-accent transition-colors"
+                  >
                     <ExternalLinkIcon className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    <span className="text-[11px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-[11px] uppercase tracking-widest">
                       Visit
                     </span>
-                  </div>
+                  </a>
                   
                   {/* Separator */}
                   <div className="w-px h-3 bg-border" />

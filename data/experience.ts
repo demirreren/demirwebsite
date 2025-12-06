@@ -4,7 +4,7 @@ export interface ExperienceEntry {
   role: string;
   period: string;
   location: string;
-  description: string;
+  description: React.ReactNode;
   image: string;
   imageCaption: string;
   imageCaptionHighlight?: string;
@@ -18,7 +18,15 @@ export const experienceData: ExperienceEntry[] = [
     role: 'Product and Venture Intern',
     period: '2025',
     location: 'Toronto',
-    description: 'Building tools to find exceptional founders before anyone else does. Product thinking meets data pipelines.',
+    description: (
+      <>
+        <a href="https://www.northside.ventures/" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary underline underline-offset-2 hover:text-accent transition-colors">Northside Ventures</a> is a solo GP venture fund in Toronto. The focus is on supporting strong Canadian founding teams at the earliest stages.
+        <br /><br />
+        The partner, <a href="https://www.linkedin.com/in/alexander-mcisaac/" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary underline underline-offset-2 hover:text-accent transition-colors">Alex McIsaac</a>, previously worked at <a href="https://www.linkedin.com/company/global-founders-capital/" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary underline underline-offset-2 hover:text-accent transition-colors">Global Founders Capital</a> and <a href="https://www.linkedin.com/company/bdc/" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary underline underline-offset-2 hover:text-accent transition-colors">BDC</a>. He brings over 15 years of experience in the Canadian ecosystem as both an operator and early stage investor.
+        <br /><br />
+        As a product and venture intern, I work with Alex across our full funnel from first touch to committed capital. I source founders, join calls, and support research and memo writing. I also build internal workflows and scoring systems that strengthen how we evaluate founders and manage our process in a lean team.
+      </>
+    ),
     image: '/images/work/northside.JPG',
     imageCaption: 'Hosting',
     imageCaptionHighlight: 'Raising Pre-Seed with Northside Ventures',
