@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: siteMetadata.title,
   description: siteMetadata.description,
   authors: [{ name: siteMetadata.author }],
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
