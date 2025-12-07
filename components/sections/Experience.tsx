@@ -108,15 +108,7 @@ export function Experience() {
                                   transition-transform duration-300 ease-out">
                       <div className="bg-gradient-to-t from-background/95 via-background/80 to-transparent pt-8 pb-3 px-3">
                         <p className="text-xs text-foreground leading-snug">
-                          {entry.imageCaptionHighlight ? (
-                            <>
-                              {entry.imageCaption}{' '}
-                              <em className="text-accent">{entry.imageCaptionHighlight}</em>
-                              {' '}at Waterloo Tech Week 2025
-                            </>
-                          ) : (
-                            entry.imageCaption
-                          )}
+                          {entry.imageCaption}
                         </p>
                       </div>
                     </div>

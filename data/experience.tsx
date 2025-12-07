@@ -7,7 +7,6 @@ export interface ExperienceEntry {
   description: React.ReactNode;
   image: string;
   imageCaption: string;
-  imageCaptionHighlight?: string;
   url: string;
 }
 
@@ -109,7 +108,7 @@ export const experienceData: ExperienceEntry[] = [
       <>
         <a href="https://www.bmwgroup.com/en.html" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary underline underline-offset-2 hover:text-accent transition-colors">BMW</a> is a global premium automotive group that sold 2.45 million cars and over 210,000 motorcycles worldwide in 2024, with a workforce of about 159,000 employees. I was working abroad specifically under <a href="https://www.bmw.com.tr/tr/index.html" target="_blank" rel="noopener noreferrer" className="text-foreground-secondary underline underline-offset-2 hover:text-accent transition-colors">BMW Turkiye</a> in Istanbul.
         <br /><br />
-        My role as a GTM Intern, supporting the loyalty and digitalization effort. I helped map and design processes, built presentations for internal and external pitches, supported cross-functional teams in marketing and customer experience, and helped design loyalty program segments, membership tiers, and data-driven campaign structures. I also handled data normalization tasks, website form design, and reporting analysis — helping bridge business goals with technical execution.
+        As a GTM Intern, I supported the loyalty and digitalization effort. I helped map and design processes, built presentations for internal and external pitches, supported cross-functional teams in marketing and customer experience, and helped design loyalty program segments, membership tiers, and data-driven campaign structures. I also handled data normalization tasks, website form design, and reporting analysis — helping bridge business goals with technical execution.
       </>
     ),
     image: '/images/work/bmw.JPG',

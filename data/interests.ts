@@ -2,6 +2,7 @@ export interface GalleryItem {
   id: string;
   caption: string;
   image: string;
+  url?: string;
 }
 
 export interface GallerySection {
@@ -15,9 +16,15 @@ export const galleryData: GallerySection[] = [
     id: 'events',
     title: 'Events',
     items: [
-      { id: 'hackathon', caption: 'Building something from nothing in 48 hours', image: '/images/gallery/events/hackathon.jpg' },
-      { id: 'conference', caption: 'Ideas that shift perspective', image: '/images/gallery/events/conference.jpg' },
-      { id: 'meetup', caption: 'The best conversations happen after', image: '/images/gallery/events/meetup.jpg' },
+      { id: 'yc-toronto', caption: 'YC in Toronto', image: '/images/gallery/events/1. ycintoronto.jpg', url: 'https://events.ycombinator.com/canada-2025' },
+      { id: 'socratica', caption: 'Socratica Symposium', image: '/images/gallery/events/2. symposium.jpg', url: 'https://luma.com/waterloo?tk=pA6Xej' },
+      { id: 'hack-the-north', caption: 'Hack the North 2025', image: '/images/gallery/events/3. hackthenorth.JPG', url: 'https://hackthenorth.com/' },
+      { id: 'iise', caption: 'IISE Annual Conference', image: '/images/gallery/events/4. iise.jpg', url: 'https://uwaterlooiise.ca/2025-regional-conference/' },
+      { id: 'north-unites', caption: 'The North Unites in Toronto', image: '/images/gallery/events/5. thenorrhunites.JPG', url: 'https://luma.com/pl4xi6d8?tk=A7iSLu' },
+      { id: 'akatos', caption: 'Akatos Fall Demo Showcase', image: '/images/gallery/events/6. akatosdemoday.jpg', url: 'https://luma.com/lorh5apm?tk=dgZ43n' },
+      { id: 'cafe-cursor', caption: 'Cafe Cursor Toronto', image: '/images/gallery/events/7. cafecursor.JPG', url: 'https://luma.com/cafe-cursor-toronto' },
+      { id: 'eclipse', caption: 'Eclipse Case Competition', image: '/images/gallery/events/8. eclipse.jpg', url: 'https://versafi.ca/wcm-events/university-of-toronto-presents-3rd-annual-eclipse-case-competition' },
+      { id: 'ofsaa', caption: 'OFSAA Provincials', image: '/images/gallery/events/9. OFSAA.JPG', url: 'https://www.ofsaa.on.ca/championship/ultimate-festival/' },
     ],
   },
   {
@@ -25,7 +32,7 @@ export const galleryData: GallerySection[] = [
     title: 'Favourite Travel',
     items: [
       { id: 'madeira', caption: 'Madeira, Portugal', image: '/images/gallery/travel/1. madeira.JPG' },
-      { id: 'fethiye', caption: 'Fehtiye, Turkiye', image: '/images/gallery/travel/2. southturkey.jpg' },
+      { id: 'fethiye', caption: 'Fethiye, Turkiye', image: '/images/gallery/travel/2. southturkey.jpg' },
       { id: 'manitoulin', caption: 'Manitoulin Island, Canada', image: '/images/gallery/travel/3. tobermory.jpg' },
       { id: 'barcelona', caption: 'Barcelona', image: '/images/gallery/travel/4. barcelona.JPG' },
       { id: 'sanfrancisco', caption: 'San Francisco', image: '/images/gallery/travel/5. sanfrancisco.JPG' },

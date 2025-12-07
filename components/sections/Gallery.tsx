@@ -46,11 +46,15 @@ export function Gallery() {
                 {/* Grid */}
                 <div className="grid grid-cols-3 gap-3">
                   {displayItems.map((item) => (
-                    <div
+                    <a
                       key={item.id}
-                      className="group relative aspect-[4/3] rounded-lg overflow-hidden 
-                               bg-background-secondary border border-border cursor-pointer
-                               hover:border-accent/30 transition-all duration-300"
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group relative aspect-[4/3] rounded-lg overflow-hidden 
+                               bg-background-secondary border border-border
+                               hover:border-accent/30 transition-all duration-300
+                               ${item.url ? 'cursor-pointer' : ''}`}
                     >
                       {/* Image */}
                       <Image
@@ -64,12 +68,29 @@ export function Gallery() {
                       {/* Sleek caption overlay */}
                       <div className="absolute inset-x-0 bottom-0">
                         <div className="bg-gradient-to-t from-black/70 via-black/40 to-transparent pt-12 pb-3 px-3">
-                          <p className="text-[11px] text-white/90 font-light tracking-[0.15em] uppercase">
-                            {item.caption}
-                          </p>
+                          {item.url ? (
+                            /* Events with links - caption + divider + view event */
+                            <div className="inline-flex flex-col">
+                              <p className="text-[11px] text-white/90 font-light tracking-[0.15em] uppercase group-hover:text-accent transition-colors">
+                                {item.caption}
+                              </p>
+                              <div className="w-full h-px bg-white/30 group-hover:bg-accent/50 mt-2 mb-1.5 transition-colors" />
+                              <div className="flex items-center gap-1">
+                                <span className="text-[9px] text-white/60 font-light tracking-[0.1em] uppercase group-hover:text-accent transition-colors">View Event</span>
+                                <svg className="w-2.5 h-2.5 text-white/60 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                              </div>
+                            </div>
+                          ) : (
+                            /* Regular items without links */
+                            <p className="text-[11px] text-white/90 font-light tracking-[0.15em] uppercase">
+                              {item.caption}
+                            </p>
+                          )}
                         </div>
                       </div>
-                    </div>
+                    </a>
                   ))}
                 </div>
 
