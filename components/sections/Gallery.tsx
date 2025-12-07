@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { galleryData } from '@/data/interests';
+import { galleryData, interestsData } from '@/data/interests';
 
 export function Gallery() {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
@@ -13,6 +13,9 @@ export function Gallery() {
       [sectionId]: !prev[sectionId],
     }));
   };
+
+  // Filter out the empty interests section from galleryData
+  const filteredGalleryData = galleryData.filter(section => section.id !== 'interests');
 
   return (
     <section className="min-h-screen py-12 overflow-y-auto">
@@ -26,7 +29,8 @@ export function Gallery() {
         </div>
 
         <div className="space-y-16">
-          {galleryData.map((section) => {
+          {/* Regular gallery sections (Events, Travel) */}
+          {filteredGalleryData.map((section) => {
             const isExpanded = expandedSections[section.id];
             const initialCount = 3;
             const hasMore = section.items.length > initialCount;
@@ -75,7 +79,6 @@ export function Gallery() {
                     onClick={() => toggleSection(section.id)}
                     className="mt-4 cursor-pointer group/more"
                   >
-                    {/* Fade line with text */}
                     <div className="flex items-center gap-4">
                       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
                       <span className="text-[10px] text-foreground-muted/60 uppercase tracking-[0.2em] 
@@ -85,7 +88,6 @@ export function Gallery() {
                       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
                     </div>
                     
-                    {/* Animated chevron */}
                     <div className="flex justify-center mt-2">
                       <svg 
                         className="w-4 h-4 text-foreground-muted/40 group-hover/more:text-accent/60 
@@ -131,6 +133,62 @@ export function Gallery() {
               </div>
             );
           })}
+
+          {/* Interests Section with diagonal cut bars */}
+          <div>
+            <h3 className="font-display text-xl text-foreground italic mb-6">
+              Interests
+            </h3>
+
+            <div className="space-y-4">
+              {interestsData.map((interest) => (
+                <div 
+                  key={interest.id}
+                  className="group relative h-28 md:h-36 rounded-xl overflow-hidden border border-border
+                           hover:border-accent/30 transition-all duration-300"
+                >
+                  {/* 4 images with diagonal cuts */}
+                  <div className="absolute inset-0 flex">
+                    {interest.images.map((image, index) => (
+                      <div
+                        key={index}
+                        className="relative flex-1 overflow-hidden"
+                        style={{
+                          clipPath: index === 0 
+                            ? 'polygon(0 0, 100% 0, 85% 100%, 0 100%)' 
+                            : index === 3 
+                              ? 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)'
+                              : 'polygon(15% 0, 100% 0, 85% 100%, 0 100%)',
+                          marginLeft: index === 0 ? '0' : '-8%',
+                        }}
+                      >
+                        <Image
+                          src={image.src}
+                          alt={`${interest.title} ${index + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          style={{ objectPosition: image.position || 'center center' }}
+                          sizes="25vw"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+
+                  {/* Gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+
+                  {/* Label - bottom left */}
+                  <div className="absolute bottom-0 left-0 pb-3 pl-5 md:pl-6">
+                    <h4 className="text-[11px] md:text-xs text-white font-light tracking-[0.25em] uppercase
+                                 drop-shadow-lg">
+                      {interest.title}
+                    </h4>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

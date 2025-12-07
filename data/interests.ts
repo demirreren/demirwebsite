@@ -22,7 +22,7 @@ export const galleryData: GallerySection[] = [
   },
   {
     id: 'travel',
-    title: 'Travel',
+    title: 'Favourite Travel',
     items: [
       { id: 'madeira', caption: 'Madeira, Portugal', image: '/images/gallery/travel/1. madeira.JPG' },
       { id: 'fethiye', caption: 'Fehtiye, Turkiye', image: '/images/gallery/travel/2. southturkey.jpg' },
@@ -45,12 +45,93 @@ export const galleryData: GallerySection[] = [
     ],
   },
   {
-    id: 'entertainment',
-    title: 'Entertainment',
-    items: [
-      { id: 'concert', caption: 'Live music hits different', image: '/images/gallery/entertainment/concert.jpg' },
-      { id: 'sports', caption: 'Energy you can only feel in person', image: '/images/gallery/entertainment/sports.jpg' },
-      { id: 'game', caption: 'Competition brings out the best', image: '/images/gallery/entertainment/game.jpg' },
+    id: 'interests',
+    title: 'Interests',
+    items: [],
+  },
+];
+
+// Interests data with 4 images per interest
+export interface InterestImage {
+  src: string;
+  position?: string; // CSS object-position value (e.g., 'center top', 'center 30%')
+}
+
+export interface InterestBar {
+  id: string;
+  title: string;
+  images: InterestImage[];
+}
+
+export const interestsData: InterestBar[] = [
+  {
+    id: 'outdoors',
+    title: 'The Outdoors',
+    images: [
+      { src: '/images/gallery/interests/outdoors1.jpg' },
+      { src: '/images/gallery/interests/outdoors2.jpg' },
+      { src: '/images/gallery/interests/outdoors3.JPG' },
+      { src: '/images/gallery/interests/outdoors4.JPG' },
+    ],
+  },
+  {
+    id: 'athletics',
+    title: 'Athletics',
+    images: [
+      { src: '/images/gallery/interests/athletics1.jpg' },
+      { src: '/images/gallery/interests/athletics2.JPG', position: 'center 20%' },
+      { src: '/images/gallery/interests/athletics3.JPG', position: 'center 55%' },  // shifted up
+      { src: '/images/gallery/interests/athletics4.JPG', position: 'center 25%' },
+    ],
+  },
+  {
+    id: 'music',
+    title: 'Concerts & Raving',
+    images: [
+      { src: '/images/gallery/interests/music1.JPG?t=1733614600' },
+      { src: '/images/gallery/interests/music2.JPG?t=1733614600' },
+      { src: '/images/gallery/interests/music3.jpg?t=1733614600' },
+      { src: '/images/gallery/interests/music4.JPG?t=1733614600' },
+    ],
+  },
+  {
+    id: 'photography',
+    title: 'Photography',
+    images: [
+      { src: '/images/gallery/interests/photo1.JPG', position: 'center 60%' },
+      { src: '/images/gallery/interests/photo3.JPG' },
+      { src: '/images/gallery/interests/photo4.JPG' },
+      { src: '/images/gallery/interests/photo2.JPG' },  // swapped with photo3
+    ],
+  },
+  {
+    id: 'sports',
+    title: 'Sports Enthusiast',
+    images: [
+      { src: '/images/gallery/interests/sports4.JPG', position: 'center 70%' },     // swapped: was sports1, now sports4
+      { src: '/images/gallery/interests/sports2.JPG', position: 'center 65%' },
+      { src: '/images/gallery/interests/sports3.jpg' },
+      { src: '/images/gallery/interests/sports1.jpg', position: 'center 70%' },     // swapped: was sports4, now sports1
+    ],
+  },
+  {
+    id: 'cafe',
+    title: 'Cafe Hopping',
+    images: [
+      { src: '/images/gallery/interests/coffee2.JPG', position: 'center 70%' },     // swapped: was coffee1, now coffee2
+      { src: '/images/gallery/interests/coffee1.JPG', position: 'center 65%' },     // swapped: was coffee2, now coffee1
+      { src: '/images/gallery/interests/coffee4.JPG' },                              // swapped: was coffee3, now coffee4
+      { src: '/images/gallery/interests/coffee3.JPG', position: 'center 70%' },     // swapped: was coffee4, now coffee3
+    ],
+  },
+  {
+    id: 'engineering',
+    title: 'Engineering Community',
+    images: [
+      { src: '/images/gallery/interests/eng1.JPG', position: 'center 60%' },
+      { src: '/images/gallery/interests/eng2.JPG' },
+      { src: '/images/gallery/interests/eng3.JPG', position: 'center 75%' },
+      { src: '/images/gallery/interests/eng4.JPG' },
     ],
   },
 ];
