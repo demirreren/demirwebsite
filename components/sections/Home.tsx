@@ -82,16 +82,16 @@ export function Home() {
             {/* Bio paragraphs */}
             <div className="space-y-5 text-foreground-secondary font-light tracking-wide">
               <p className="text-base leading-relaxed font-light tracking-wide">
-                Hey! My name is Demir (duh-meer), and I'm currently in my third year of Management Engineering.
+                Hey! My name is Demir (duh-meer), and I&apos;m currently in my third year of Management Engineering.
               </p>
 
               <p className="text-base leading-relaxed font-light tracking-wide">
-                Based in Toronto 🇨🇦, but you'll often find me somewhere new :)
+                Based in Toronto 🇨🇦, but you&apos;ll often find me somewhere new :)
               </p>
 
               <div>
                 <p className="text-base leading-relaxed mb-3">
-                  What I'm currently up to...
+                  What I&apos;m currently up to...
                 </p>
                 <ul className="space-y-2.5 text-base list-none font-light tracking-wide">
                   <li className="flex items-center gap-1">

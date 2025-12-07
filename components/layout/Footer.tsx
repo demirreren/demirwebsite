@@ -9,7 +9,7 @@ export function Footer() {
           {/* Left */}
           <div>
             <h3 className="font-display text-display text-foreground mb-3 italic">
-              Let's connect
+              Let&apos;s connect
             </h3>
             <p className="text-body text-foreground-secondary max-w-sm">
               Always open to interesting conversations, collaborations, 
